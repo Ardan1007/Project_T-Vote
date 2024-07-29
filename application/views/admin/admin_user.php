@@ -83,7 +83,7 @@
             padding: 15px;
             width: 80%;
             position: absolute; /* Position the logout button at the bottom */
-            bottom: 20px; /* Distance from the bottom */
+            bottom: 30px; /* Distance from the bottom */
         }
 
         .logout-button i {
