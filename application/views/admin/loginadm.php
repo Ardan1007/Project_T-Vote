@@ -183,7 +183,7 @@
     <div class="form-container">
         
         
-        <?php echo form_open('admin/dashboard'); ?>
+        <?php echo form_open('EventVote'); ?>
         <div class="card">
 		<div class="header">
             <!-- <a href="<?php echo base_url('dashboard'); ?>" class="back-icon"><i class="fas fa-arrow-left"></i></a> -->

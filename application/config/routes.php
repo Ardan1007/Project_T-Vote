@@ -59,6 +59,7 @@ $route['register'] = 'auth/register';
 $route['login'] = 'auth/login'; 
 $route['logout'] = 'auth/logout';
 $route['login_admin'] = 'auth/login_admin'; 
+$route['logout_admin'] = 'auth/logout_admin';
 
 // Route Pembelian Token
 $route['beli-token'] = 'pembelian/beli_token'; 

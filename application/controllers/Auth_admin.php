@@ -41,5 +41,12 @@ class Auth_admin extends CI_Controller {
             }
         }
     }
+
+	public function logout_admin() {
+        // Hapus semua data sesi
+        $this->session->sess_destroy();
+        // Arahkan ke halaman login atau halaman lain setelah logout
+        redirect('login_admin');  // Sesuaikan dengan rute login Anda
+    }
 }
 ?>
