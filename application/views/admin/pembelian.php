@@ -170,7 +170,7 @@
             <a href="<?php echo base_url('admin/admin_user'); ?>" class="menu-item">Kelola Pengguna</a>
             <a href="<?php echo base_url('admin/hasil_voting'); ?>" class="menu-item">Lihat Hasil Voting</a>
         </div>
-        <a href="<?php echo base_url('admin/loginadm'); ?>" class="menu-item logout-button"><i class="mdi mdi-logout" style="margin-right: 10px;"></i>Keluar</a>
+        <a href="<?php echo base_url('auth/login_admin'); ?>" class="menu-item logout-button"><i class="mdi mdi-logout" style="margin-right: 10px;"></i>Keluar</a>
     </div>
     <div class="container mt-5">
         <h2 style="font-weight: bold;">Kelola Pembelian</h2>

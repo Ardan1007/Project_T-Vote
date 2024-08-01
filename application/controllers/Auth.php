@@ -103,7 +103,8 @@ class Auth extends CI_Controller {
         }
     }
 
-    public function login_admin() {
+    // Method untuk menampilkan halaman login
+	public function login_admin() {
         
         // Validasi form
         $this->form_validation->set_rules('username', 'Username', 'required');
@@ -124,7 +125,7 @@ class Auth extends CI_Controller {
                 $this->session->set_userdata('user_id', $user['id_user']);
                 $this->session->set_userdata('username', $user['username']);
                 // Redirect ke halaman setelah login berhasil
-                redirect('admin/dashboard');
+                redirect('EventVote');
             } else {
                 // Jika autentikasi gagal, tampilkan pesan error
                 $data['error'] = 'Username atau password salah.';

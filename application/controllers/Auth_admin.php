@@ -15,7 +15,7 @@ class Auth_admin extends CI_Controller {
     public function login_admin() {
         
         // Validasi form
-        $this->form_validation->set_rules('username_adm', 'Username', 'required');
+        $this->form_validation->set_rules('username', 'Username', 'required');
         $this->form_validation->set_rules('password', 'Password', 'required');
 
         if ($this->form_validation->run() == FALSE) {
@@ -23,30 +23,23 @@ class Auth_admin extends CI_Controller {
             $this->load->view('admin/loginadm');
         } else {
             // Jika validasi berhasil, lakukan proses autentikasi
-            $username_adm = $this->input->post('username_adm');
+            $username = $this->input->post('username');
             $password = $this->input->post('password');
 
-            $user = $this->Admin_login_model->login($username_adm, $password);
+            $user = $this->Admin_login_model->login($username, $password);
 
             if ($user) {
                 // Jika autentikasi berhasil, simpan data user ke session
-                $this->session->set_userdata('user_id', $user['id_admin']);
-                $this->session->set_userdata('username_adm', $user['username_adm']);
+                $this->session->set_userdata('user_id', $user['id_user']);
+                $this->session->set_userdata('username', $user['username']);
                 // Redirect ke halaman setelah login berhasil
-                redirect('admin/dashboard');
+                redirect('EventVote');
             } else {
                 // Jika autentikasi gagal, tampilkan pesan error
                 $data['error'] = 'Username atau password salah.';
                 $this->load->view('admin/loginadm', $data);
             }
         }
-    }
-
-	public function logout_admin() {
-        // Hapus semua data sesi
-        $this->session->sess_destroy();
-        // Arahkan ke halaman login atau halaman lain setelah logout
-        redirect('login_admin');  // Sesuaikan dengan rute login Anda
     }
 }
 ?>

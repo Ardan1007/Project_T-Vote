@@ -231,7 +231,7 @@
 
             <!-- <a class="menu-item2">Token : <?php echo $jumlah_token; ?></a> -->
         </div>
-        <a href="<?php echo base_url('admin/loginadm'); ?>" class="menu-item logout-button"><i class="mdi mdi-logout" style="margin-right: 10px;"></i>Keluar</a>
+        <a href="<?php echo base_url('auth/login_admin'); ?>" class="menu-item logout-button"><i class="mdi mdi-logout" style="margin-right: 10px;"></i>Keluar</a>
     </div>
 <div class="container mt-5">
     <h2 style="font-weight: bold;">Hasil Voting</h2>

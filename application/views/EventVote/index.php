@@ -27,7 +27,7 @@
         }
 
         .sidebar {
-            width: 300px;
+            width: 380px;
             height: 100vh;
             background-color: #ffffff;
             display: flex;
@@ -219,7 +219,7 @@
     padding: 10px 30px; /* Mengurangi padding jika terlalu besar */
     font-size: 18px;
     font-weight: bold;
-    margin: 20px 0; /* Berikan ruang margin atas dan bawah */
+    margin-top: 10px;
     display: inline-block; /* Pastikan tampil sebagai blok dalam satu baris */
     text-align: center;
 }
@@ -232,30 +232,33 @@
 
         .event-management {
             display: flex;
-            justify-content: space-around;
-            align-items: center;
-            margin: 20px 0;
+			margin-left: 80px;
+			margin-top: 30px;
+			margin-bottom: 30px;
+         
         }
 
         .event-option {
             background-color: white;
-            border-radius: 10px;
+			color: #000000;
+            border-radius: 20px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             text-align: center;
             width: 200px;
+			margin-left: 10px;
+			margin-right: 10px;
             padding: 20px;
             transition: transform 0.3s;
+			text-decoration: none; 
         }
 
         .event-option:hover {
-            transform: scale(1.05);
+            background-color: #000000;
+    color: #9FC743;
+    text-decoration: none; 
         }
 
-        .event-option a {
-            color: black;
-            text-decoration: none;
-            font-weight: bold;
-        }
+        
 
         .section {
             display: none;
@@ -311,6 +314,10 @@
 			height: auto;
 }
 
+.judul {
+	margin-left: 85px;
+	margin-bottom: 10px;
+}
     </style>
     <title>Event Management</title>
 </head>
@@ -326,23 +333,25 @@
                 <a href="<?php echo base_url('admin/admin_user'); ?>" class="menu-item">Kelola Pengguna</a>
                 <a href="<?php echo base_url('admin/hasil_voting'); ?>" class="menu-item">Hasil Voting</a>
             </div>
-            <a href="<?php echo base_url('admin/loginadm'); ?>" class="menu-item logout-button"><i class="mdi mdi-logout" style="margin-right: 10px;"></i>Keluar</a>
+            <a href="<?php echo base_url('auth/login_admin'); ?>" class="menu-item logout-button"><i class="mdi mdi-logout" style="margin-right: 10px;"></i>Keluar</a>
         </div>
 
         <div class="container">
-            <h2>Kelola Event</h2>
+			<div class="judul">
+                <h2 style="font-weight: bold;">Kelola Event</h2>
+            </div>
             <div class="event-management">
-                <div class="event-option">
-                    <a href="#" id="show-event-vote">Daftar Event Vote</a>
+                <div >
+                    <a href="#" id="show-event-vote" class="event-option" style="font-weight: bold;">Daftar Event Vote</a>
                 </div>
-                <div class="event-option">
-                    <a href="#" id="show-kandidat">Daftar Kandidat</a>
+                <div >
+                    <a href="#" id="show-kandidat" class="event-option" style="font-weight: bold;">Daftar Kandidat</a>
                 </div>
             </div>
 
             <div id="daftar-event-vote" class="container mt-5 mb-5 section active">
                 <div class="container-tabel" style="margin-left: 60px;">
-                <h2>Daftar Event Vote</h2>
+                <h2 style="font-weight: bold;">Daftar Event Vote</h2>
 				<div class="table-responsive">
 					<table class="table" id="table-event-vote">
 						<thead>
@@ -358,7 +367,7 @@
 								<td><?php echo $k['nama_event']; ?></td>
 								<td><?php echo $k['deskripsi']; ?></td>
 								<td>
-									<a href="<?php echo base_url('EventVote/edit/'.$k['id']); ?>" class="btn-edit btn-primary">Edit</a>
+									<a href="<?php echo base_url('EventVote/edit/'.$k['id']); ?>" class="btn-edit btn-primary">Ubah</a>
 									<a href="<?php echo base_url('EventVote/hapus/'.$k['id']); ?>" class="btn-hapus btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus Event Vote ini?')">Hapus</a>
 								</td>
 							</tr>
@@ -373,7 +382,7 @@
 
             <div id="daftar-kandidat" class="container section">
 			<div class="container-tabel" style="margin-left: 60px;">
-                <h2>Daftar Kandidat</h2>
+                <h2 style="font-weight: bold;">Daftar Kandidat</h2>
                 <div class="table-responsive">
                     <table class="table" id="table-kandidat">
                         <thead>
@@ -396,7 +405,7 @@
         <td><?php echo $k['visi_misi']; ?></td>
         <td>
             <div class="btn-group">
-                <a href="<?php echo base_url('KandidatEventVote/edit/'.$k['id']); ?>" class="btn-edit btn-primary">Edit</a>
+                <a href="<?php echo base_url('KandidatEventVote/edit/'.$k['id']); ?>" class="btn-edit btn-primary">Ubah</a>
                 <a href="<?php echo base_url('KandidatEventVote/hapus/'.$k['id']); ?>" class="btn-hapus btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus kandidat ini?')">Hapus</a>
             </div>
         </td>

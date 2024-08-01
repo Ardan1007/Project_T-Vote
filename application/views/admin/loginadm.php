@@ -91,8 +91,8 @@
         .card-title {
             font-weight: 800;
             font-size: 25px;
-            margin-left: 80px;
-            margin-right: 130px;
+            margin-left: 100px;
+            margin-right: 110px;
         }
         .form-control {
             border-radius: 30px;
@@ -183,20 +183,21 @@
     <div class="form-container">
         
         
-        <?php echo form_open('EventVote'); ?>
+        
         <div class="card">
 		<div class="header">
-            <!-- <a href="<?php echo base_url('dashboard'); ?>" class="back-icon"><i class="fas fa-arrow-left"></i></a> -->
+
             <h2 class="card-title">Masuk</h2>
         </div>
+		<?php echo form_open('EventVote'); ?>
             <div class="card-body">
                 <div class="mb-3">
                     <label for="username" class="form-label">Nama Admin</label>
-                    <input type="text" name="username"  value="<?php echo set_value('username_adm'); ?>"  class="form-control" placeholder="Masukan Nama" required>
+                    <input type="text" name="username" value="<?php echo set_value('username'); ?>" class="form-control" placeholder="Masukan Nama Admin">
                 </div>
                 <div class="mb-3">
                     <label for="password" class="form-label">Kata Sandi</label>
-                    <input type="password" name="password" class="form-control" placeholder="Masukan Kata Sandi" required>
+                    <input type="password" name="password" class="form-control" placeholder="Masukan Kata Sandi">
                 </div>
                 <div class="mb-3">
                     <button type="submit" class="btn btn-custom">Masuk</button>
@@ -205,27 +206,14 @@
                     <?php echo validation_errors(); ?>
                     <?php if(isset($error)) echo $error; ?>
                 </div>
-                <!-- <div class="mb-3 text-center">
-                    <p>Belum Punya akun? <a href="<?php echo base_url('auth/register')?>">Daftar</a></p>
-                </div> -->
+				
             </div>
         </div>
-        <?php echo form_close(); ?>
+		<?php echo form_close(); ?>
     </div>
     <div class="illustration">
         <img src="<?php echo base_url('assets/login.png'); ?>" alt="Illustration">
     </div>
 </div>
-
-<!-- <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const form = document.querySelector('form');
-        const loader = document.getElementById('loader');
-
-        form.addEventListener('submit', function() {
-            loader.style.display = 'flex';
-        });
-    });
-</script> -->
 </body>
 </html>
